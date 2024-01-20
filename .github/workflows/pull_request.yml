@@ -1,0 +1,34 @@
+name: PullReqeust_GhActions
+
+on:
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build-and-create-channel:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout
+
+      - name: Echo trigger
+        run: |
+          echo "Trigger on pull requests"
+    
+      # - name: setup node latest
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 18
+      
+      # - name: setup firebase tools
+      #   run: npm install -g firebase-tools
+
+      # - name: setup environment variables
+      #   run: echo "${{ secrets.ENV_VARS }}" | base64 --decode > .env
+
+      # - name: deploy firebase with channel
+      #   run: |
+      #     firebase hosting:channel:create ${{ github.event.number }}
+      #     firebase hosting:channel:deploy ${{ github.event.number }}
