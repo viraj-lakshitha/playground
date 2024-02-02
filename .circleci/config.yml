@@ -8,7 +8,7 @@ jobs:
       - image: cimg/openjdk:11.0-node
     steps:
       - checkout
-      - run: mkdir ci_workspace
+      - run: mkdir ci_workspace && cd ci_workspace && mkdir docs && cd ..
       - run: echo "Hello World from CircleCI" >> ci_workspace/docs/README.md
       - persist_to_workspace:
           root: ci_workspace
