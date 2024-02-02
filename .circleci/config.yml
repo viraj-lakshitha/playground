@@ -24,6 +24,8 @@ jobs:
       - attach_workspace:
           at: .
       - run: ls -a -l
+      - run: cd docs && cat README.md
+      
 
 workflows:
   default_workflow:
